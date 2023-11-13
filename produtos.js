@@ -21,4 +21,10 @@ async function selecionarProdutoPorNome(nome) {
     return res[0]
 }
 
+async function criarProduto(nome) {
+    const res = await database.query('SELECT * FROM products WHERE name=?', [nome])
+
+    return res[0]
+}
+
 module.exports = { selecionarProduto, selecionarProdutoPorNome }
